@@ -1,0 +1,27 @@
+"""Dado un árbol binario ordenado, retornar una lista de listas con los dígitos de cada número en el árbol, manteniendo el orden de los elementos"""
+
+class Nodo():
+    def __init__(self, valor, izquierda = None, derecha = None):
+        self.valor = valor
+        self.izquierda = izquierda
+        self.derecha = derecha
+
+def arbol():
+  return Nodo(15,Nodo(10, None, Nodo(12)), Nodo(25))
+
+def out(a):
+    if(a!=None):
+        return out(a.izquierda)+[a.valor]+out(a.derecha)
+    return []
+
+def ldel(lb,la):
+  if(len(lb)>0):
+    return ldel(lb[1:],la+[sub(str(lb[0]),[])])
+  return la
+
+def sub(l,v):
+  if(len(l)>0):
+    return sub(l[1:],v+[int(l[0])])  
+  return v
+
+print (ldel(out(arbol()),[]))
