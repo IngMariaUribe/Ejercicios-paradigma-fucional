@@ -1,0 +1,14 @@
+"""Retornar un entero con los últimos dígitos de una lista de enteros"""
+
+def lista():
+  return [123,456,789,364]
+
+def salida(lista,num):
+  if(len(lista)>0):
+    return salida(lista[1:],num+(str((lista[0]))[-1]))
+  else:
+    return int(num)
+
+print(salida(lista(),""))
+print (type(salida(lista(),"")))
+
