@@ -1,0 +1,34 @@
+"""Para una lista de listas retornar una lista de tuplas con el mayor, menor y la suma del mayor y menor de cada sublista"""
+def listadelistas():
+  return [[3, 6, 9], [12, 15, 18], [21, 24, 27], [9, 18, 12]]
+
+def listadetuplas(l,t):
+  if(len(l)>0):
+    return listadetuplas(l[1:],t+[(tupla(l[0],()))])
+  return t
+  
+def tupla(l,t):
+  if(len(l)>0):
+    return (mayor(l,l[0]),menor(l,l[0]),mayor(l,l[0])+menor(l,l[0]))
+  else:    
+    return t
+
+def menor(l,me):
+  if(len(l)>0):
+    if(l[0]<me):
+      return menor(l[1:],l[0])
+    return menor(l[1:],me)  
+  return me  
+  
+def mayor(l,ma):
+  if(len(l)>0):
+    if(l[0]>ma):
+      return mayor(l[1:],l[0])
+    return mayor(l[1:],ma)  
+  return ma    
+
+print(listadetuplas(listadelistas(),[]))
+
+
+
+
