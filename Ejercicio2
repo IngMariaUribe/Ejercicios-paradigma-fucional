@@ -1,0 +1,23 @@
+"""Armar una lista de listas con los enteros formados por los múltiplos de 3 de los dígitos de los enteros de una lista"""
+def lista():
+  return [123,456,789,364]
+
+
+def separar(lista,ldel):
+  if(len(lista)>0):   
+    return separar(lista[1:],ldel+[multiplo(str(lista[0]),[])])
+  else:
+    return ldel
+
+def multiplo(l,sub):
+  if(len(l)>0):
+    return multiplo((l[1:]),sub+[int(l[0])*3])
+  else:
+    return sub
+
+
+
+print("Lista de listas",separar(lista(),[]))
+
+
+
