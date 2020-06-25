@@ -5,6 +5,6 @@
 3.Para una lista de listas retornar una lista de tuplas con el mayor, menor y la suma del mayor y menor de cada sublista
 4.Dado un árbol binario ordenado, retornar una lista de listas con los dígitos de cada número en el árbol, manteniendo el orden de los elementos
 
-#Elaborado por:
+# Elaborado por:
 Maria Fernanda Uribe 
 20172020110
